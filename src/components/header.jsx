@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import Config from "../config.json";
 import {
   Navbar,
   Container,
@@ -8,8 +8,33 @@ import {
   Badge,
   Button,
 } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const [data, setData] = useState(null);
+  const [key, setKey] = useState(null);
+
+  // useEffect(() => {
+  //   if (Config & Config[0]["CMC_KEY"]) {
+  //     const key = Config[0]["CMC_KEY"];
+  //     setKey(key);
+  //   }
+  //   getPrice();
+  // }, []);
+
+  // const getPrice = async () => {
+  //   const URL = `${}`;
+  //   const options = {
+  //     method: "GET",
+  //     headers: new Headers({ "content-type": "application/json", "X-CMC_PRO_API_KEY": key }),
+  //   };
+  //   const response = await fetch(URL, options);
+  //   const data = await response.json();
+  //   if (response.ok) {
+  //     return data.data[0];
+  //   }
+  // };
+
   return (
     <>
       <Navbar bg="dark" variant="dark">
@@ -27,7 +52,6 @@ export default function Header() {
             </Navbar.Brand>
           </Link>
           <Nav className="me-auto">
-            {/* <Nav.Link>Home</Nav.Link> */}
             <Link
               to="/academy"
               style={{ textDecoration: "none", marginRight: "10px" }}
@@ -39,12 +63,7 @@ export default function Header() {
             </Link>
           </Nav>
           <Nav className="ms-auto">
-            <NavItem>
-              <Nav.Link href="/">
-                <Badge bg="primary">Primary</Badge>{" "}
-                <Badge bg="secondary">Secondary</Badge>{" "}
-              </Nav.Link>
-            </NavItem>
+            <NavItem></NavItem>
             <Button variant="primary">Connect</Button>{" "}
           </Nav>
         </Container>
