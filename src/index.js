@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./root";
+import Wrapper from "./components/wrapper";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Root />
+    <Wrapper>
+      <Root />
+    </Wrapper>
   </React.StrictMode>,
   document.getElementById("root")
 );

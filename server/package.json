@@ -1,11 +1,13 @@
 {
-  "name": "server",
+  "name": "API Server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "clean": "rm -rf node_modules build",
+    "dev:start": "clear;nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +17,11 @@
     "express": "^4.17.2",
     "helmet": "^5.0.1",
     "mongodb": "^4.3.0",
-    "mongodb-memory-server": "^8.1.0"
+    "mongodb-memory-server": "^8.1.0",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.15"
   }
 }

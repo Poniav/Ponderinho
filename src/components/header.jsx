@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Config from "../config.json";
 import {
   Navbar,
   Container,
@@ -8,9 +7,11 @@ import {
   Badge,
   Button,
 } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { Context } from "./wrapper";
+import { useEffect, useState, useContext } from "react";
 
 export default function Header() {
+  const context = useContext(Context);
   const [data, setData] = useState(null);
   const [key, setKey] = useState(null);
 
@@ -63,7 +64,12 @@ export default function Header() {
             </Link>
           </Nav>
           <Nav className="ms-auto">
-            <NavItem></NavItem>
+            <NavItem>
+              <select value={context.locale} onChange={context.selectLanguage}>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+              </select>
+            </NavItem>
             <Button variant="primary">Connect</Button>{" "}
           </Nav>
         </Container>
