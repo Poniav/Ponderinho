@@ -41,7 +41,7 @@ export default function Header() {
       <Navbar bg="dark" variant="dark">
         <Container>
           <Link to="/" style={{ textDecoration: "none" }}>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand>
               {/* <img
                 alt=""
                 src="/logo.svg"
@@ -49,7 +49,7 @@ export default function Header() {
                 height="30"
                 className="d-inline-block align-top"
               />{" "} */}
-              Ponderinho
+              <span style={{ fontWeight: "bold" }}>LunaApp</span>
             </Navbar.Brand>
           </Link>
           <Nav className="me-auto">

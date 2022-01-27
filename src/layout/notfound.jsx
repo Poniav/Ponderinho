@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 
-export default function Game() {
+export default function NotFound() {
   return (
     <Container>
       <main style={{ padding: "1rem 0" }}>
