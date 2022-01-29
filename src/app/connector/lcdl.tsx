@@ -4,7 +4,7 @@ import { LCDClient } from "@terra-money/terra.js";
 // console.log(process.env.NODE_URL)
 
 // connect to Colombus Mainnet
-const terra = new LCDClient({
+const LDLC = new LCDClient({
   URL: "https://lcd.terra.dev",
   chainID: "columbus-5",
 });
@@ -15,4 +15,4 @@ const terra = new LCDClient({
 //   chainID: 'localterra'
 // });
 
-export default terra;
+export default LDLC;

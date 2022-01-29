@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import {
   Navbar,
   Container,
@@ -6,41 +6,24 @@ import {
   NavItem,
   Badge,
   Button,
-} from "react-bootstrap";
-import { Context } from "./wrapper";
-import { useEffect, useState, useContext } from "react";
+} from 'react-bootstrap';
+import { Context } from './wrapper';
+import { useEffect, useState, useContext } from 'react';
 
 export default function Header() {
   const context = useContext(Context);
-  const [data, setData] = useState(null);
-  const [key, setKey] = useState(null);
-
-  // useEffect(() => {
-  //   if (Config & Config[0]["CMC_KEY"]) {
-  //     const key = Config[0]["CMC_KEY"];
-  //     setKey(key);
-  //   }
-  //   getPrice();
-  // }, []);
-
-  // const getPrice = async () => {
-  //   const URL = `${}`;
-  //   const options = {
-  //     method: "GET",
-  //     headers: new Headers({ "content-type": "application/json", "X-CMC_PRO_API_KEY": key }),
-  //   };
-  //   const response = await fetch(URL, options);
-  //   const data = await response.json();
-  //   if (response.ok) {
-  //     return data.data[0];
-  //   }
-  // };
-
   return (
     <>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Link to="/" style={{ textDecoration: "none" }}>
+      <Navbar
+        style={{
+          backgroundColor: '#131a35',
+          borderBottom: '2px solid #1c274f',
+          marginBottom: '25px',
+        }}
+        variant="dark"
+      >
+        <Container fluid>
+          <Link to="/" style={{ textDecoration: 'none' }}>
             <Navbar.Brand>
               {/* <img
                 alt=""
@@ -49,20 +32,22 @@ export default function Header() {
                 height="30"
                 className="d-inline-block align-top"
               />{" "} */}
-              <span style={{ fontWeight: "bold" }}>LunaApp</span>
+              <span style={{ fontWeight: 'bold' }}>LunaApp</span>
             </Navbar.Brand>
           </Link>
-          <Nav className="me-auto">
-            <Link
-              to="/academy"
-              style={{ textDecoration: "none", marginRight: "10px" }}
-            >
-              <NavItem>Academy</NavItem>
-            </Link>
-            <Link to="/game" style={{ textDecoration: "none" }}>
-              <NavItem>Game</NavItem>
-            </Link>
-          </Nav>
+          <Container>
+            <Nav className="me-auto">
+              <Link
+                to="/academy"
+                style={{ textDecoration: 'none', marginRight: '10px' }}
+              >
+                <div style={{ color: '#414e7b' }}>Academy</div>
+              </Link>
+              <Link to="/wallet" style={{ textDecoration: 'none' }}>
+                <NavItem>Wallet</NavItem>
+              </Link>
+            </Nav>
+          </Container>
           <Nav className="ms-auto">
             <NavItem>
               <select value={context.locale} onChange={context.selectLanguage}>
@@ -70,7 +55,7 @@ export default function Header() {
                 <option value="fr">French</option>
               </select>
             </NavItem>
-            <Button variant="primary">Connect</Button>{" "}
+            <Button variant="primary">Connect</Button>{' '}
           </Nav>
         </Container>
       </Navbar>

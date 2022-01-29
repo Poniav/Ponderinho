@@ -1,12 +1,9 @@
-import { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { useState, useEffect } from 'react';
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 export default function Home() {
-  const [data, setData] = useState(null);
-  const [key, setKey] = useState(null);
-
   return (
     <>
       <Container>
