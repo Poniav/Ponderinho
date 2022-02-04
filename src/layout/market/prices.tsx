@@ -37,9 +37,10 @@ export default function Prices() {
   }
 
   useEffect(() => {
-    if (data.length === 0) {
-      getPrices();
-    }
+    getPrices();
+  }, [])
+
+  useEffect(() => {
     const intervalId = setInterval(() => {
       getPrices();
     }, 20000);
